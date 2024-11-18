@@ -16,23 +16,23 @@ This project is divided into two sections:
 
 2. Install Dependencies for the Frontend
    
-  ```bash
-  cd frontend
-  pnpm install
-  # or
-  npm install
-  # or
-  yarn install
+     ```bash
+     cd frontend
+     pnpm install
+     # or
+     npm install
+     # or
+     yarn install
 
 3. Install Dependencies for the Backend
 
-  ```bash
-  cd ../backend
-  pnpm install
-  # or
-  npm install
-  # or
-  yarn install
+     ```bash
+     cd ../backend
+     pnpm install
+     # or
+     npm install
+     # or
+     yarn install
 
 ## Useful Links
 - **GraphQL Playground**: [http://localhost:1337/graphql](http://localhost:1337/graphql)
