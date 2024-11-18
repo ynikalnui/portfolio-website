@@ -12,7 +12,7 @@ This project is divided into two sections:
 1. Clone the repository:
 
    ```bash
-   git clone (https://github.com/ynikalnui/next-strapi-boilerplate.git)
+   git clone https://github.com/ynikalnui/next-strapi-boilerplate.git
 
 2. Install Dependencies for the Frontend
    
