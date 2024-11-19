@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "welcome_sections",
+  "info": {
+    "singularName": "welcome-section",
+    "pluralName": "welcome-sections",
+    "displayName": "WelcomeSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
