@@ -11,16 +11,11 @@ export default async function AboutSection() {
     const { data } = await query<TAboutSectionQuery>({query: GET_ABOUT_CONTENT})
     
     return (
-        <div className="pt-10 font-roboto-slab font-normal text-xl">
+        <div className="pt-10 flex flex-col gap-y-8 font-roboto-slab font-normal text-xl">
             {
                 data.mainSection.about.split('\n').map((line, index) => (
                     line.length > 0 && (
-                        <p 
-                        key={index}
-                        className="mb-10 last:mb-0"
-                        >
-                            {line}
-                        </p>
+                        <p key={index}>{line}</p>
                     )
                 ))
             }
