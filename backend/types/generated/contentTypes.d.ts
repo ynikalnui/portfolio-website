@@ -399,12 +399,13 @@ export interface ApiMetadataMetadata extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
-  collectionName: 'navigations';
+export interface ApiNavigationButtonNavigationButton
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'navigation_buttons';
   info: {
-    displayName: 'Navigation';
-    pluralName: 'navigations';
-    singularName: 'navigation';
+    displayName: 'NavigationButton';
+    pluralName: 'navigation-buttons';
+    singularName: 'navigation-button';
   };
   options: {
     draftAndPublish: true;
@@ -413,19 +414,14 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    darkModeImg: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    lightModeImg: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    href: Schema.Attribute.String;
+    label: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::navigation.navigation'
+      'api::navigation-button.navigation-button'
     > &
       Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -433,13 +429,13 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiWelcomeSectionWelcomeSection
-  extends Struct.SingleTypeSchema {
-  collectionName: 'welcome_sections';
+export interface ApiSocialButtonSocialButton
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'social_buttons';
   info: {
-    displayName: 'WelcomeSection';
-    pluralName: 'welcome-sections';
-    singularName: 'welcome-section';
+    displayName: 'SocialButton';
+    pluralName: 'social-buttons';
+    singularName: 'social-button';
   };
   options: {
     draftAndPublish: true;
@@ -448,17 +444,50 @@ export interface ApiWelcomeSectionWelcomeSection
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::welcome-section.welcome-section'
+      'api::social-button.social-button'
     > &
       Schema.Attribute.Private;
-    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface ApiUserSectionUserSection extends Struct.SingleTypeSchema {
+  collectionName: 'user_sections';
+  info: {
+    description: '';
+    displayName: 'UserSection';
+    pluralName: 'user-sections';
+    singularName: 'user-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fullName: Schema.Attribute.String;
+    introDescription: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-section.user-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    userIcon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    userSpecialty: Schema.Attribute.String;
   };
 }
 
@@ -972,8 +1001,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::metadata.metadata': ApiMetadataMetadata;
-      'api::navigation.navigation': ApiNavigationNavigation;
-      'api::welcome-section.welcome-section': ApiWelcomeSectionWelcomeSection;
+      'api::navigation-button.navigation-button': ApiNavigationButtonNavigationButton;
+      'api::social-button.social-button': ApiSocialButtonSocialButton;
+      'api::user-section.user-section': ApiUserSectionUserSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

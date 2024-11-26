@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "user_sections",
+  "info": {
+    "singularName": "user-section",
+    "pluralName": "user-sections",
+    "displayName": "UserSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "userSpecialty": {
+      "type": "string"
+    },
+    "introDescription": {
+      "type": "text"
+    },
+    "userIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
