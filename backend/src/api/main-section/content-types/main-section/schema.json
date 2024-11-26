@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_sections",
+  "info": {
+    "singularName": "main-section",
+    "pluralName": "main-sections",
+    "displayName": "MainSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "about": {
+      "type": "richtext"
+    }
+  }
+}

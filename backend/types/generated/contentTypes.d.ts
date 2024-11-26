@@ -369,6 +369,35 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMainSectionMainSection extends Struct.SingleTypeSchema {
+  collectionName: 'main_sections';
+  info: {
+    description: '';
+    displayName: 'MainSection';
+    pluralName: 'main-sections';
+    singularName: 'main-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    about: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::main-section.main-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMetadataMetadata extends Struct.SingleTypeSchema {
   collectionName: 'metadatas';
   info: {
@@ -1000,6 +1029,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::main-section.main-section': ApiMainSectionMainSection;
       'api::metadata.metadata': ApiMetadataMetadata;
       'api::navigation-button.navigation-button': ApiNavigationButtonNavigationButton;
       'api::social-button.social-button': ApiSocialButtonSocialButton;
