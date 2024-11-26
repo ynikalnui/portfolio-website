@@ -2,7 +2,7 @@ import { query } from "@/lib/apollo/client"
 import Image from "next/image"
 import Link from "next/link"
 import { GET_SOCIAL_BUTTONS } from "./user-social-buttons-query"
-import { getStrapiImage } from "@/app/utils/getStrapiImage";
+import { getStrapiUrl } from "@/app/utils/getStrapiUrl";
 
 type TSocialButton = {
     icon: {
@@ -32,7 +32,7 @@ export default async function SocialButtons() {
                         target="_blank"
                         rel="noopener noreferrer">
                             <Image 
-                            src={getStrapiImage(social.icon.url)}
+                            src={getStrapiUrl(social.icon.url)}
                             alt={social.icon.alternativeText}
                             width={35}
                             height={35}

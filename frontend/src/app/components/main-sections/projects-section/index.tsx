@@ -19,21 +19,6 @@ export default async function ProjectsSection() {
                     <ProjectComponent key={i} {...project}/>
                 ))
             }
-            {
-                data.projects.map((project, i) => (
-                    <ProjectComponent key={i} {...project}/>
-                ))
-            }
-            {
-                data.projects.map((project, i) => (
-                    <ProjectComponent key={i} {...project}/>
-                ))
-            }
-            {
-                data.projects.map((project, i) => (
-                    <ProjectComponent key={i} {...project}/>
-                ))
-            }
         </div>
     )
 }

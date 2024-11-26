@@ -1,6 +1,6 @@
 'use client'
 
-import { getStrapiImage } from "@/app/utils/getStrapiImage"
+import { getStrapiUrl } from "@/app/utils/getStrapiUrl"
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
@@ -49,7 +49,7 @@ export default function ProjectComponent({
                 after:opacity-0 after:transition-opacity hover:after:opacity-100"
                 >
                     <Image 
-                    src={getStrapiImage(projectPreview.url)}
+                    src={getStrapiUrl(projectPreview.url)}
                     alt={projectPreview.alternativeText}
                     width={300}
                     height={160}
@@ -68,7 +68,7 @@ export default function ProjectComponent({
                         {projectLanguages.map((language, index) => (
                             <li key={index}>
                                 <Image 
-                                src={getStrapiImage(language.url)} 
+                                src={getStrapiUrl(language.url)} 
                                 alt={language.alternativeText}
                                 width={35}
                                 height={35}
