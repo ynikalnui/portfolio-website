@@ -458,6 +458,46 @@ export interface ApiNavigationButtonNavigationButton
   };
 }
 
+export interface ApiProjectProject extends Struct.CollectionTypeSchema {
+  collectionName: 'projects';
+  info: {
+    description: '';
+    displayName: 'Project';
+    pluralName: 'projects';
+    singularName: 'project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project.project'
+    > &
+      Schema.Attribute.Private;
+    projectCompany: Schema.Attribute.String;
+    projectDates: Schema.Attribute.String;
+    projectDescription: Schema.Attribute.Text;
+    projectLanguages: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    projectLink: Schema.Attribute.String;
+    projectName: Schema.Attribute.String;
+    projectPreview: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSocialButtonSocialButton
   extends Struct.CollectionTypeSchema {
   collectionName: 'social_buttons';
@@ -1032,6 +1072,7 @@ declare module '@strapi/strapi' {
       'api::main-section.main-section': ApiMainSectionMainSection;
       'api::metadata.metadata': ApiMetadataMetadata;
       'api::navigation-button.navigation-button': ApiNavigationButtonNavigationButton;
+      'api::project.project': ApiProjectProject;
       'api::social-button.social-button': ApiSocialButtonSocialButton;
       'api::user-section.user-section': ApiUserSectionUserSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;

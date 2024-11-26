@@ -16,7 +16,8 @@ export default {
         'secondary-bg': '#4A403B',
         'main-text': '#FFFFFF',
         'secondary-text': '#B9B9B9',
-        'accent': '#AF9D84'
+        'accent': '#AF9D84',
+        'transparent-black': 'rgba(0,0,0,0.5)'
       },
       fontSize: {
         'sm': '0.938rem',
@@ -26,6 +27,9 @@ export default {
         '3xl': '1.875rem',
         '4xl': '2.188rem',
         '5xl': '2.5rem'
+      },
+      boxShadow: {
+        'box-md': '0px 0px 5px 0px rgba(0,0,0,0.8)'
       }
     },
   },

@@ -19,7 +19,7 @@ export default async function NavigationButtons() {
             {data.navigationButtons.map((item, i) => (
                 <li 
                 key={i} 
-                className='cursor-pointer text-secondary-text transition-colors hover:text-main-text
+                className='cursor-pointer text-main-text opacity-50 transition-opacity hover:opacity-100
                 after:block after:border-b-[10px] after:border-accent after:scale-x-0 after:origin-left 
                 after:transition-transform hover:after:scale-x-100'>
                     <Link href={item.href}>{item.label}</Link>
