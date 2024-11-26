@@ -428,36 +428,6 @@ export interface ApiMetadataMetadata extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiNavigationButtonNavigationButton
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'navigation_buttons';
-  info: {
-    displayName: 'NavigationButton';
-    pluralName: 'navigation-buttons';
-    singularName: 'navigation-button';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    href: Schema.Attribute.String;
-    label: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::navigation-button.navigation-button'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
@@ -1071,7 +1041,6 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::main-section.main-section': ApiMainSectionMainSection;
       'api::metadata.metadata': ApiMetadataMetadata;
-      'api::navigation-button.navigation-button': ApiNavigationButtonNavigationButton;
       'api::project.project': ApiProjectProject;
       'api::social-button.social-button': ApiSocialButtonSocialButton;
       'api::user-section.user-section': ApiUserSectionUserSection;
