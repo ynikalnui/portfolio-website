@@ -1,6 +1,6 @@
 'use client'
 
-import { getStrapiUrl } from "@/app/utils/getStrapiUrl"
+import { getStrapiUrl } from "@/utils/getStrapiUrl"
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"

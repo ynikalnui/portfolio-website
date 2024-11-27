@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image"
-import { getStrapiUrl } from "@/app/utils/getStrapiUrl"
+import { getStrapiUrl } from "@/utils/getStrapiUrl"
 
 export default function ViewCVButton({link}:{link:string}) {
     const handleViewCV = () => {

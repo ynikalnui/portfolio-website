@@ -1,5 +1,5 @@
-import MainSections from "./components/main-sections";
-import UserSection from "./components/user-section";
+import MainSections from "../components/main-sections";
+import UserSection from "../components/user-section";
 
 export default function Home() {
   return (

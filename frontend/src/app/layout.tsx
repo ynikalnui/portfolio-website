@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "./styles/globals.css";
-import Providers from "./providers";
+import "../styles/globals.css";
+import Providers from "../providers";
 import { ReactNode } from "react";
 import { query } from "@/lib/apollo/client";
 import { gql } from "@apollo/client";

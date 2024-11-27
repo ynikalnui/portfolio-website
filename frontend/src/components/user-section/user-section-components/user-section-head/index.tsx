@@ -1,7 +1,7 @@
 import { query } from "@/lib/apollo/client";
 import { GET_USER_HEAD } from "./user-head-query";
 import Image from "next/image";
-import { getStrapiUrl } from "@/app/utils/getStrapiUrl";
+import { getStrapiUrl } from "@/utils/getStrapiUrl";
 
 export default async function UserSectionHead() {
     const { data } = await query({query: GET_USER_HEAD})

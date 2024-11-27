@@ -2,7 +2,7 @@ import { query } from "@/lib/apollo/client"
 import Image from "next/image"
 import Link from "next/link"
 import { GET_SOCIAL_BUTTONS } from "./user-social-buttons-query"
-import { getStrapiUrl } from "@/app/utils/getStrapiUrl";
+import { getStrapiUrl } from "@/utils/getStrapiUrl";
 
 type TSocialButton = {
     icon: {
