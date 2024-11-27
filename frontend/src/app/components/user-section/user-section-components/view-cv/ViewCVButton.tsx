@@ -1,17 +1,11 @@
 'use client'
 
 import Image from "next/image"
-import { GET_USER_RESUME } from "./resume-cv-query"
-import { useQuery } from "@apollo/client"
 import { getStrapiUrl } from "@/app/utils/getStrapiUrl"
 
-export default function ViewCVButton() {
-    const { data } = useQuery(GET_USER_RESUME)
-    
+export default function ViewCVButton({link}:{link:string}) {
     const handleViewCV = () => {
-        if(data) {
-            window.open(getStrapiUrl(data.userSection.resume.url), '_blank');
-        }
+        window.open(getStrapiUrl(link), '_blank');
     };
 
     return(

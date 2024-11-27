@@ -1,6 +1,6 @@
 import SocialButtons from "../user-section-components/social-buttons";
 import UserSectionHead from "../user-section-components/user-section-head";
-import ViewCVButton from "../user-section-components/view-cv-button";
+import ViewCV from "../user-section-components/view-cv";
 import NavigationButtons from "./navigation-buttons";
 
 export default function UserSectionDesktop() {
@@ -10,7 +10,7 @@ export default function UserSectionDesktop() {
             
             <NavigationButtons />
 
-            <ViewCVButton />
+            <ViewCV />
 
             <SocialButtons />
         </section>

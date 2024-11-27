@@ -17,6 +17,7 @@ export default {
         'main-text': '#FFFFFF',
         'secondary-text': '#B9B9B9',
         'accent': '#AF9D84',
+        'functional': '#39312D',
         'transparent-black': 'rgba(0,0,0,0.5)'
       },
       fontSize: {

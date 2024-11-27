@@ -13,7 +13,7 @@ export default async function AboutSection() {
     return (
         <div 
         id="about"
-        className="pt-10 flex flex-col gap-y-8 font-roboto-slab font-normal text-xl"
+        className="mt-10 flex flex-col gap-y-8 font-roboto-slab font-normal text-xl"
         >
             {
                 data.mainSection.about.split('\n').map((line, index) => (
