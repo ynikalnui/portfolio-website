@@ -7,12 +7,17 @@ export type TFormData = {
     name: string;
     email: string;
     message: string;
+    honeypot?: string | null
 };
 
 export default function ContactSection() {
     const { register, handleSubmit } = useForm<TFormData>();
 
     const onSubmit = (data: TFormData) => {
+        if (data.honeypot) {
+            return console.warn('Bot detected')
+        }
+
         sendEmail(data);
     }
 
@@ -59,6 +64,13 @@ export default function ContactSection() {
                     {...register('message', { required: true })}
                     />
                 </div>
+
+                {/* honeypot */}
+                <input 
+                type="text"
+                className="hidden"
+                {...register('honeypot', { required: false })}
+                />
                 
                 <button 
                 className="w-full bg-accent text-main-text font-roboto-slab font-bold text-2xl text-center py-3 rounded-full
