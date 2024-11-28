@@ -24,14 +24,16 @@ export default function ContactSection() {
     return (
         <div 
         id="contact"
-        className="mb-10 bg-secondary-bg p-4 rounded-2xl"
+        className="lg:mb-10 flex flex-col gap-y-4"
         >
+            <h3 className="block lg:hidden text-center w-full border-b-8 border-accent font-bold text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl">CONTACT</h3>
+
             <form
-            className="flex flex-col gap-y-8"
+            className="flex flex-col gap-y-6 lg:gap-y-8 bg-secondary-bg p-4 rounded-2xl"
             onSubmit={handleSubmit(onSubmit)}
             >
-                <div className="flex w-full gap-x-4">
-                    <div className="flex flex-col w-2/5 gap-y-1">
+                <div className="flex w-full flex-col gap-y-6 lg:gap-y-0 lg:flex-row gap-x-4">
+                    <div className="flex flex-col w-full lg:w-2/5 gap-y-1">
                         <label className="font-roboto-slab font-bold text-xl">Name</label>
                         <input 
                         type="text"
@@ -42,7 +44,7 @@ export default function ContactSection() {
                         />
                     </div>
                     
-                    <div className="flex flex-col w-3/5 gap-y-1">
+                    <div className="flex flex-col w-full lg:w-3/5 gap-y-1">
                         <label className="font-roboto-slab font-bold text-xl">Email</label>
                         <input 
                         type="email" 

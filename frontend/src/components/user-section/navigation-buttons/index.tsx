@@ -8,7 +8,7 @@ export default async function NavigationButtons() {
     ]
 
     return (
-        <ul className="flex flex-col gap-y-8 font-roboto-slab font-bold text-5xl">
+        <ul className="hidden lg:flex flex-col gap-y-8 font-roboto-slab font-bold text-4xl xl:text-5xl">
             {navigationButtons.map((item, i) => (
                 <li 
                 key={i} 

@@ -3,7 +3,7 @@ import UserSection from "../components/user-section";
 
 export default function Home() {
   return (
-    <main className="w-full px-4 py-2 flex flex-col md:flex-row md:justify-between md:p-0 md:max-w-[1280px] md:mx-auto md:overflow-hidden md:max-h-screen">
+    <main className="w-full px-4 py-4 gap-y-8 lg:gap-y-0 lg:py-2 flex flex-col md:mx-auto max-w-[768px] lg:flex-row lg:justify-between lg:max-w-[1280px] lg:overflow-hidden lg:max-h-screen">
       <UserSection />
       <MainSections /> 
     </main>
