@@ -1,4 +1,21 @@
+'use client'
+
+import { sendEmail } from '@/utils/sendEmail';
+import { useForm } from 'react-hook-form';
+
+export type TFormData = {
+    name: string;
+    email: string;
+    message: string;
+};
+
 export default function ContactSection() {
+    const { register, handleSubmit } = useForm<TFormData>();
+
+    const onSubmit = (data: TFormData) => {
+        sendEmail(data);
+    }
+
     return (
         <div 
         id="contact"
@@ -6,6 +23,7 @@ export default function ContactSection() {
         >
             <form
             className="flex flex-col gap-y-8"
+            onSubmit={handleSubmit(onSubmit)}
             >
                 <div className="flex w-full gap-x-4">
                     <div className="flex flex-col w-2/5 gap-y-1">
@@ -15,6 +33,7 @@ export default function ContactSection() {
                         placeholder="Your Name"
                         className="bg-functional outline-none rounded-2xl px-4 py-3 
                         font-roboto-slab font-normal text-lg text-main-text placeholder:text-secondary-text"
+                        {...register('name', { required: true })}
                         />
                     </div>
                     
@@ -25,6 +44,7 @@ export default function ContactSection() {
                         placeholder="Your Email"
                         className="bg-functional outline-none rounded-2xl px-4 py-3 
                         font-roboto-slab font-normal text-lg text-main-text placeholder:text-secondary-text"
+                        {...register('email', { required: true })}
                         />
                     </div>
                 </div>
@@ -32,9 +52,11 @@ export default function ContactSection() {
                 <div className="flex flex-col w-full gap-y-1">
                     <label className="font-roboto-slab font-bold text-xl">Message</label>
                     <textarea 
+                    rows={4}
                     placeholder="Hey Oleh, I love your website! I would love to talk with you. Looking forward to hearing from you!"
-                    className="bg-functional outline-none rounded-2xl px-4 py-3 
+                    className="bg-functional outline-none rounded-2xl px-4 py-3 scrollbar-hide
                     font-roboto-slab font-normal text-lg text-main-text placeholder:text-secondary-text"
+                    {...register('message', { required: true })}
                     />
                 </div>
                 

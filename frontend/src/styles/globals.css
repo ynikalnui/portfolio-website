@@ -8,4 +8,8 @@
     body {
         @apply bg-main-bg text-main-text
     }
+
+    button {
+        @apply outline-none
+    }
 }
