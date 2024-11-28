@@ -42,12 +42,11 @@ export default function ProjectComponent({
                 href={projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="lg:relative sm:mx-0 w-full sm:w-fit
-                after:hidden lg:after:flex
-                after:content-['View_App'] after:items-center after:justify-center after:rounded-2xl
-                after:text-xl after:font-sans after:tracking-wider after:font-normal 
+                className="relative sm:mx-0 w-full sm:w-fit
+                after:content-['Click_To_View'] lg:after:content-['View_App'] after:flex after:items-center after:justify-center after:rounded-2xl
+                after:text-base lg:after:text-xl after:font-roboto-slab after:tracking-wider after:font-normal 
                 after:absolute after:inset-0 after:bg-transparent-black 
-                after:opacity-0 after:transition-opacity hover:after:opacity-100"
+                lg:after:opacity-0 lg:after:transition-opacity lg:hover:after:opacity-100"
                 >
                     <Image 
                     src={getStrapiUrl(projectPreview.url)}
@@ -83,7 +82,7 @@ export default function ProjectComponent({
                 </div>
 
                 <button 
-                className="hidden lg:block absolute top-0 right-0 w-8 h-8"
+                className="hidden sm:block absolute top-0 right-0 w-8 h-8"
                 onClick={() => setIsOpened(!isOpened)}
                 >
                     <motion.div
@@ -131,7 +130,7 @@ export default function ProjectComponent({
                             exit={{opacity:0}}
                             className="mt-4"
                             >
-                                <p className="font-roboto-slab font-normal text-sm md:text-base">{projectDescription}</p>
+                                <p className="font-roboto-slab font-normal text-sm sm:text-base">{projectDescription}</p>
                             </motion.div>
                         </motion.div>
                     )
@@ -144,8 +143,8 @@ export default function ProjectComponent({
                 <Image 
                 src='/images/arrow.svg'
                 alt="toggle description"
-                width={30}
-                height={30}
+                width={26}
+                height={26}
                 className={`transition-transform ${isOpened ? 'rotate-180' : 'rotate-0'}`}
                 />
             </button>
