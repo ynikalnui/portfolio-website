@@ -65,7 +65,6 @@ export default function ContactSection() {
                     />
                 </div>
 
-                {/* honeypot */}
                 <input 
                 type="text"
                 className="hidden"
