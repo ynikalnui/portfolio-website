@@ -42,7 +42,7 @@ export default function ProjectComponent({
                 href={projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative sm:mx-0 w-full sm:w-fit
+                className="relative sm:mx-0 w-full sm:w-1/2 sm:flex sm:items-center sm:bg-black rounded-2xl shadow-box-md
                 after:content-['Click_To_View'] lg:after:content-['View_App'] after:flex after:items-center after:justify-center after:rounded-2xl
                 after:text-base lg:after:text-xl after:font-roboto-slab after:tracking-wider after:font-normal 
                 after:absolute after:inset-0 after:bg-transparent-black 
@@ -53,13 +53,13 @@ export default function ProjectComponent({
                     alt={projectPreview.alternativeText}
                     width={300}
                     height={160}
-                    className="rounded-2xl shadow-box-md h-auto w-full sm:w-auto"
+                    className="rounded-2xl h-auto w-full max-h-[300px]"
                     />
                 </Link>
 
-                <div className="flex flex-col justify-between items-start gap-y-2 sm:gap-y-0">
+                <div className="flex flex-col justify-between items-start gap-y-2 sm:gap-y-0 w-full sm:w-1/2">
                     <div className="flex flex-col gap-y-2 sm:gap-y-0">
-                        <h3 className="font-roboto-slab font-bold text-2xl sm:text-3xl lg:text-2xl xl:text-3xl">{projectName}</h3>
+                        <h3 className="font-roboto-slab font-bold text-2xl sm:text-3xl lg:text-2xl xl:text-3xl sm:max-w-[85%]">{projectName}</h3>
 
                         <div className="flex flex-row gap-x-4 sm:flex-col">
                             <p className="font-roboto-slab font-medium text-lg sm:text-xl lg:text-lg xl:text-xl">{projectCompany}</p>
