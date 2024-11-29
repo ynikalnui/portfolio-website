@@ -9,9 +9,21 @@ const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1
 
 export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
   return new ApolloClient({
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            userSection: {
+              merge(existing = {}, incoming) {
+                return { ...existing, ...incoming };
+              }
+            }
+          }
+        }
+      }
+    }),
     link: new HttpLink({
-      uri: `${STRAPI_URL}/graphql`,
+      uri: `${STRAPI_URL}/graphql`
     })
   })
 })
