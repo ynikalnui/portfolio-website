@@ -19,8 +19,8 @@ const verifyEmailExists = async (email: string): Promise<boolean> => {
             },
         });
         return response.data.data.result === 'deliverable';
-    } catch (err: any) {
-        console.error('Error verifying email:', err.message);
+    } catch (err) {
+        console.error('Error verifying email');
         return false;
     }
 };
