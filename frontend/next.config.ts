@@ -16,6 +16,20 @@ const nextConfig: NextConfig = {
         port: '3000',
         pathname: '/**',
         search: ''
+      },
+      {
+        protocol: 'https',
+        hostname: 'oleh-strapi.dieselservice.com.ua',
+        port: '',
+        pathname: '/**',
+        search: ''
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '1037',
+        pathname: '/**',
+        search: ''
       }
     ]
   }
