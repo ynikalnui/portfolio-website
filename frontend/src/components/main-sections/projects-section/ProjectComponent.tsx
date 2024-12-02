@@ -45,7 +45,7 @@ export default function ProjectComponent({
                 className="relative sm:mx-0 w-full sm:w-1/2 sm:flex sm:items-center sm:bg-black rounded-2xl shadow-box-md
                 after:content-['Click_To_View'] lg:after:content-['View_App'] after:flex after:items-center after:justify-center after:rounded-2xl
                 after:text-base lg:after:text-xl after:font-roboto-slab after:tracking-wider after:font-normal 
-                after:absolute after:inset-0 after:bg-transparent-black 
+                after:absolute after:inset-0 after:bg-transparent-black after:backdrop-blur-sm
                 lg:after:opacity-0 lg:after:transition-opacity lg:hover:after:opacity-100"
                 >
                     <Image 
