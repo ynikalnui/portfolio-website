@@ -401,6 +401,7 @@ export interface ApiMainSectionMainSection extends Struct.SingleTypeSchema {
 export interface ApiMetadataMetadata extends Struct.SingleTypeSchema {
   collectionName: 'metadatas';
   info: {
+    description: '';
     displayName: 'Metadata';
     pluralName: 'metadatas';
     singularName: 'metadata';
@@ -409,6 +410,7 @@ export interface ApiMetadataMetadata extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    author: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -420,11 +422,13 @@ export interface ApiMetadataMetadata extends Struct.SingleTypeSchema {
       'api::metadata.metadata'
     > &
       Schema.Attribute.Private;
+    preview: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    url: Schema.Attribute.String;
   };
 }
 
