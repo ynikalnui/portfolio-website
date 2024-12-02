@@ -34,10 +34,6 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${data.metadata.favicon.url}` 
     },
-    viewport: {
-      width: "device-width",       
-      initialScale: 1              
-    },
     openGraph: {
       title: data.metadata.title,
       description: data.metadata.description,
